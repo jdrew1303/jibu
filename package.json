@@ -1,0 +1,28 @@
+{
+  "name": "jibu",
+  "version": "1.0.0",
+  "description": "Easy module to create channels and their commands then retrieve the same with the power of Full Text search and synonym query expansion. Built to be independent, ready to run and use with multiple languages.",
+  "main": "lib/jibu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anthony Mugendi <ngurumugz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.5.2",
+    "lodash": "^4.5.1",
+    "memdown": "^1.1.2",
+    "mkdirp": "^0.5.1",
+    "pouchdb": "^5.2.1",
+    "pouchdb-collate": "^1.2.0",
+    "pouchdb-quick-search": "^1.1.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "full",
+    "text",
+    "commands",
+    "channel",
+    "channels"
+  ]
+}
