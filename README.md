@@ -6,7 +6,6 @@ Install using: **npm install --save jibu**
 
 ```javascript
 
-//not necessary but you want to use path for these things
 var path = require('path');
 
 //JIBU options
@@ -16,7 +15,7 @@ var options={
 };
 
 //ok lets start jibu
-var j = require('jibu')(options);
+var j = require('./lib/jibu')(options);
 
 //create some document
 var docs =
@@ -42,7 +41,7 @@ var docs =
   {
     channel:'Nairobi',
     command: 'fashion',
-    command_syns:'clothes,shoes,belts,caps,fashion,design,kungara,nguo,kofia,kitenge'.split(','), //note some of these command synonyms are in swahili
+    command_syns:'clothes,shoes,belts,caps,fashion,design,kungara,nguo,kofia,kitenge'.split(','),
     response:[
       {
         "designer": "Trendy Joys Designs",
@@ -56,6 +55,7 @@ var docs =
   }
 
 ];
+
 
 
 
@@ -78,6 +78,13 @@ j.addCommand(docs, function(){
       console.log(JSON.stringify(jibu,0,4));
   });
 
+  //delete command
+  j.removeCommand(channel,'fashion', function(doc){
+    console.log('Removed');
+    console.log(doc);
+  });
+
 });
+
 
 ```

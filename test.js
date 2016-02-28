@@ -50,6 +50,7 @@ var docs =
 
 
 
+
 //add the document to jibu
 j.addCommand(docs, function(){
   //ok let us run a query
@@ -67,6 +68,12 @@ j.addCommand(docs, function(){
   //OK let us now fetch some answers (majibu) from the channel
   j.jibu(channel,querySring, function(jibu){
       console.log(JSON.stringify(jibu,0,4));
+  });
+
+  //delete command
+  j.removeCommand(channel,'fashion', function(doc){
+    console.log('Removed');
+    console.log(doc);
   });
 
 });
