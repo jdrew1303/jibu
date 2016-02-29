@@ -6,10 +6,11 @@ var options={
   debug: true //default false
 };
 
-//ok lets start jibu
-var j = require('./lib/jibu')(options);
+//initialize Library
+var jj = require('./lib/jibu')(options);
 
-//create some document
+
+//prepare some commands/documents to add into index
 var docs =
 [
 
@@ -48,32 +49,23 @@ var docs =
 
 ];
 
+//set channel
+var channel = 'nairobi';
 
+//load index
+// jj.loadIndex(channel);
 
+//Now add some new commands
+jj.addCommands(docs, channel);
 
-//add the document to jibu
-j.addCommand(docs, function(){
-  //ok let us run a query
-  var querySring = 'where is the party happening this weekend?';
-  var channel = 'nairobi';
+//these is how you remove commands from index
+// jj.removeCommands(docs, channel);
 
-  //OK let us now fetch some answers (majibu) from the channel
-  j.jibu(channel,querySring, function(jibu){
-      console.log(JSON.stringify(jibu,0,4));
-  });
+//ready for some awesome queries
+var q= 'where is the party happening this weekend?';
 
-  querySring = 'nitapata wapi nguo hii Nairobi sasa?';
-  channel = 'nairobi';
+//run query
+var results= jj.jibu(q, channel);
 
-  //OK let us now fetch some answers (majibu) from the channel
-  j.jibu(channel,querySring, function(jibu){
-      console.log(JSON.stringify(jibu,0,4));
-  });
-
-  //delete command
-  j.removeCommand(channel,'fashion', function(doc){
-    console.log('Removed');
-    console.log(doc);
-  });
-
-});
+//log results
+console.log(JSON.stringify(results,0,4));
