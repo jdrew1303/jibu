@@ -2,7 +2,7 @@ var path = require('path');
 
 //JIBU options
 var options={
-  db: path.join(__dirname,'data'), //this is the directory path to our pouchdb database
+  db_path: path.join(__dirname,'data'), //this is the directory path to our pouchdb database
   debug: true //default false
 };
 
