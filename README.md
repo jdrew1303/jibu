@@ -15,7 +15,7 @@ var options={
 };
 
 //initialize Library
-var jj = require('./lib/jibu')(options);
+var jj = require('jibu')(options);
 
 
 //prepare some commands/documents to add into index
