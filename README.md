@@ -72,6 +72,7 @@ jj.addCommands(docs, channel);
 //ready for some awesome queries
 var q= 'where is the party happening this weekend?';
 
+
 //run query
 var results= jj.jibu(q, channel);
 

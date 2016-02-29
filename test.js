@@ -50,7 +50,7 @@ var docs =
 ];
 
 //set channel
-var channel = 'nairobi';
+var channel = 'NAIROBI';
 
 //load index
 // jj.loadIndex(channel);
@@ -59,10 +59,11 @@ var channel = 'nairobi';
 jj.addCommands(docs, channel);
 
 //these is how you remove commands from index
-// jj.removeCommands(docs, channel);
+jj.removeCommands(docs, channel);
 
 //ready for some awesome queries
 var q= 'where is the party happening this weekend?';
+q= 'alcohol and booz!';
 
 //run query
 var results= jj.jibu(q, channel);
