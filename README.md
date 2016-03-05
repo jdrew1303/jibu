@@ -10,12 +10,12 @@ var path = require('path');
 
 //JIBU options
 var options={
-  db_path: path.join(__dirname,'data'), //this is the directory path to our index/db
+  db_path: path.join(__dirname,'data'), //this is the directory path to our pouchdb database
   debug: true //default false
 };
 
 //initialize Library
-var jj = require('jibu')(options);
+var jj = require('./lib/jibu')(options);
 
 
 //prepare some commands/documents to add into index
@@ -25,7 +25,7 @@ var docs =
   {
     channel:'Nairobi',
     command: 'parties',
-    command_syns:['party','rave','disco','festival','nightlife','bash','food','drinks','ALCOHOL***'],
+    command_syns:['party','bash','food','drinks', 'price 900'],
     response:[
       {
         "name": "Godown Bash",
@@ -58,26 +58,39 @@ var docs =
 ];
 
 //set channel
-var channel = 'nairobi';
+var channel = 'NAIROBI';
 
-//load index
+//load index - NOT important, you will often never use this command
 // jj.loadIndex(channel);
 
 //Now add some new commands
 jj.addCommands(docs, channel);
 
-//these is how you remove commands from index
+//this is how you remove commands from index
 // jj.removeCommands(docs, channel);
 
-//ready for some awesome queries
-var q= 'where is the party happening this weekend?';
-
-
+// ready for some awesome queries
+q= 'price is less than 500';
 //run query
 var results= jj.jibu(q, channel);
-
 //log results
 console.log(JSON.stringify(results,0,4));
+
+// we can even do some interesting numeric queries to return lesser than, equal to or even greater than values
+//the beauty of this search type is that it allows data entry in plain text or using mathematical symbols
+
+q= 'price is less than or equal to 900';
+//run query
+var results= jj.jibu(q, channel);
+//log results
+console.log(JSON.stringify(results,0,4));
+
+q= 'price <= 900';
+//run query
+var results= jj.jibu(q, channel);
+//log results
+console.log(JSON.stringify(results,0,4));
+
 
 
 

@@ -17,7 +17,7 @@ var docs =
   {
     channel:'Nairobi',
     command: 'parties',
-    command_syns:['party','rave','disco','festival','nightlife','bash','food','drinks','ALCOHOL***'],
+    command_syns:['party','bash','food','drinks', 'price 900'],
     response:[
       {
         "name": "Godown Bash",
@@ -52,21 +52,33 @@ var docs =
 //set channel
 var channel = 'NAIROBI';
 
-//load index
+//load index - NOT important, you will often never use this command
 // jj.loadIndex(channel);
 
 //Now add some new commands
 jj.addCommands(docs, channel);
 
-//these is how you remove commands from index
-jj.removeCommands(docs, channel);
+//this is how you remove commands from index
+// jj.removeCommands(docs, channel);
 
-//ready for some awesome queries
-var q= 'where is the party happening this weekend?';
-q= 'alcohol and booz!';
-
+// ready for some awesome queries
+q= 'price is less than 500';
 //run query
 var results= jj.jibu(q, channel);
+//log results
+console.log(JSON.stringify(results,0,4));
 
+// we can even do some interesting numeric queries to return lesser than, equal to or even greater than values
+//the beauty of this search type is that it allows data entry in plain text or using mathematical symbols
+
+q= 'price is less than or equal to 900';
+//run query
+var results= jj.jibu(q, channel);
+//log results
+console.log(JSON.stringify(results,0,4));
+
+q= 'price <= 900';
+//run query
+var results= jj.jibu(q, channel);
 //log results
 console.log(JSON.stringify(results,0,4));

@@ -9,10 +9,12 @@
   "author": "Anthony Mugendi <ngurumugz@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "array-query": "^0.1.2",
     "elasticlunr": "^0.8.6",
     "lodash": "^4.5.1",
     "mkdirp": "^0.5.1",
-    "moment": "^2.11.2"
+    "moment": "^2.11.2",
+    "multi-stopwords": "^1.0.1"
   },
   "devDependencies": {},
   "keywords": [
