@@ -14,7 +14,8 @@
     "lodash": "^4.5.1",
     "mkdirp": "^0.5.1",
     "moment": "^2.11.2",
-    "multi-stopwords": "^1.0.1"
+    "multi-stopwords": "^1.0.1",
+    "parse-numbers": "^1.0.8"
   },
   "devDependencies": {},
   "keywords": [
