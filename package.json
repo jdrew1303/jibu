@@ -1,6 +1,6 @@
 {
   "name": "jibu",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Easy module to create channels and their commands then retrieve the same with the power of Full Text search and synonym query expansion. Built to be independent, ready to run and use with multiple languages.",
   "main": "lib/jibu.js",
   "scripts": {
