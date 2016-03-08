@@ -9,7 +9,7 @@
   "author": "Anthony Mugendi <ngurumugz@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "array-query": "^0.1.2",
+    "JQ": "0.0.1",
     "elasticlunr": "^0.8.6",
     "lodash": "^4.5.1",
     "mkdirp": "^0.5.1",
