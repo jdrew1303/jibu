@@ -136,9 +136,9 @@ console.log(JSON.stringify(results,0,4));
 
 ### Explanations
 The query_path field tells us how the query was run.
-1. First, the query _price of clothes is less than five thousand and more than 600_ was run as _Full Text_ and _2 results_ were found.
-2. Then, the query and results were passed to the _numericQuery_ engine and the query '_number < 5000 && number > 600_' was run with a _boolean &&_ mode.
-3. Because we already had results from the full text query, then _numericQuery_ engine _reduced_ the results to _1_ that met both Full Text and numericQuery conditions.
++ First, the query _price of clothes is less than five thousand and more than 600_ was run as _Full Text_ and _2 results_ were found.
++ Then, the query and results were passed to the _numericQuery_ engine and the query '_number < 5000 && number > 600_' was run with a _boolean &&_ mode.
++ Because we already had results from the full text query, then _numericQuery_ engine _reduced_ the results to _1_ that met both Full Text and numericQuery conditions.
 
 ### Note
 If Full Text Query had found no results, the numericQuery would have automatically changed its role to that of expanding results rather than reducing.
