@@ -12,6 +12,7 @@
     "JQ": "0.0.1",
     "elasticlunr": "^0.8.6",
     "lodash": "^4.5.1",
+    "lru-cache": "^4.0.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.11.2",
     "multi-stopwords": "^1.0.1",

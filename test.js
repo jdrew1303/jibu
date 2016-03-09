@@ -3,7 +3,7 @@ var path = require('path');
 //JIBU options
 var options={
   db_path: path.join(__dirname,'data'), //this is the directory path to our pouchdb database
-  debug: true //default false
+  log: true //default false
 };
 
 //initialize Library
@@ -69,19 +69,28 @@ q= 'price of clothes is less than five thousand and more than 600';
 //run query
 var results= jj.jibu(q, channel);
 //log results
-console.log(JSON.stringify(results,0,4));
+// console.log(JSON.stringify(results,0,4));
+
+
+
 
 // we can even do some interesting numeric queries to return lesser than, equal to or even greater than values
 //the beauty of this search type is that it allows data entry in plain text or using mathematical symbols
 
-// q= 'price is less than or equal to 900';
-// //run query
-// var results= jj.jibu(q, channel);
-// //log results
+q= 'price is less than or equal to 900';
+//run query
+var results= jj.jibu(q, channel);
+//log results
 // console.log(JSON.stringify(results,0,4));
 //
-// q= 'price <= 900';
-// //run query
-// var results= jj.jibu(q, channel);
-// //log results
+jj.refreshIndex(channel);
+
+var results= jj.jibu(q, channel);
+
+var results= jj.jibu(q, channel);
+
+q= 'price <= 900';
+//run query
+var results= jj.jibu(q, channel);
+//log results
 // console.log(JSON.stringify(results,0,4));
