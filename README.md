@@ -43,7 +43,7 @@ var docs =
   {
     channel:'Nairobi',
     command: 'parties',
-    command_syns:['party','bash','food','drinks', 'price 900'],
+    search:['party','bash','food','drinks', 'price 900'],
     response:[
       {
         "name": "Godown Bash",
@@ -60,7 +60,7 @@ var docs =
   {
     channel:'Nairobi',
     command: 'fashion',
-    command_syns:'clothes,shoes,belts,caps,fashion,design,kungara,nguo,kofia,kitenge'.split(','),
+    search:'clothes,shoes,belts,caps,fashion,design,kungara,nguo,kofia,kitenge'.split(','),
     response:[
       {
         "designer": "Trendy Joys Designs",
@@ -72,7 +72,6 @@ var docs =
       }
     ]
   }
-
 ];
 
 //set channel
